@@ -10,19 +10,4 @@ import kotlinx.coroutines.flow.Flow
 interface BorrameDao {
     @Upsert
     suspend fun upsert(entity: BorrameEntity)
-
-    @Delete
-    suspend fun delete(entity: BorrameEntity)
-
-    @Query("Select * from borrame ORDER BY borrameId")
-    fun observeAll(): Flow<List<BorrameEntity>>
-
-    @Query("Select * from borrame WHERE borrameId=:id")
-    suspend fun getById(id: Int): BorrameEntity
-
-    @Query("Delete from borrame WHERE borrameId=:id")
-    suspend fun deleteById(id: Int)
-
-    @Query("Select exists(Select 1 from borrame WHERE borrameId=:id)")
-    suspend fun exists(id: Int): Boolean
 }
