@@ -10,6 +10,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.android.angelraonel_guerreroantigua_ap2_p1.presentation.borrame.form.BorrameFormScreen
 import com.android.angelraonel_guerreroantigua_ap2_p1.presentation.borrame.list.BorrameListScreen
+import com.android.angelraonel_guerreroantigua_ap2_p1.presentation.borrame.list.BorrameListViewModel
 
 @Composable
 fun RegistroNavHost(
@@ -23,6 +24,7 @@ fun RegistroNavHost(
     ) {
         composable<Screen.BorrameList>{
             BorrameListScreen(
+                BorrameListViewModel(),
                 onAddBorrame = {
                     navController.navigate(Screen.BorrameForm())
                 },
