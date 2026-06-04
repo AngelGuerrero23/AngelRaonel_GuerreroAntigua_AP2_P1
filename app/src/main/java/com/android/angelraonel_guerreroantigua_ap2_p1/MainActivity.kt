@@ -11,37 +11,26 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
+import com.android.angelraonel_guerreroantigua_ap2_p1.navigation.RegistroNavHost
+import com.android.angelraonel_guerreroantigua_ap2_p1.presentation.borrame.list.BorrameListViewModel
 import com.android.angelraonel_guerreroantigua_ap2_p1.ui.theme.AngelRaonel_GuerreroAntigua_AP2_P1Theme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             AngelRaonel_GuerreroAntigua_AP2_P1Theme {
+                val navController = rememberNavController()
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    RegistroNavHost(navController = navController,innerPadding = innerPadding)
+
                 }
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    AngelRaonel_GuerreroAntigua_AP2_P1Theme {
-        Greeting("Android")
-    }
-}
