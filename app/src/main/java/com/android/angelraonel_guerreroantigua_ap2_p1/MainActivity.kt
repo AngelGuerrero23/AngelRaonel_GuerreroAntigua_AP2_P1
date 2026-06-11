@@ -5,15 +5,10 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
 import com.android.angelraonel_guerreroantigua_ap2_p1.navigation.RegistroNavHost
-import com.android.angelraonel_guerreroantigua_ap2_p1.presentation.borrame.list.BorrameListViewModel
 import com.android.angelraonel_guerreroantigua_ap2_p1.ui.theme.AngelRaonel_GuerreroAntigua_AP2_P1Theme
 import dagger.hilt.android.AndroidEntryPoint
 

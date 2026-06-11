@@ -1,4 +1,4 @@
-package com.android.angelraonel_guerreroantigua_ap2_p1.presentation.borrame.list
+package com.android.angelraonel_guerreroantigua_ap2_p1.presentation.amonestacion.list
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -23,33 +23,33 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun BorrameListScreen(
-    viewModel: BorrameListViewModel,
-    onAddBorrame: () -> Unit,
-    onEditBorrame: (Int) -> Unit
+fun AmonestacionListScreen(
+    viewModel: AmonestacionListViewModel,
+    onAddAmonestacion: () -> Unit,
+    onEditAmonestacion: (Int) -> Unit
 ){
-    BorrameListBody(
-        onAddBorrame = onAddBorrame,
-        onEditBorrame = onEditBorrame
+    AmonestacionListBody(
+        onAddAmonestacion = onAddAmonestacion,
+        onEditAmonestacion = onEditAmonestacion
     )
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun BorrameListBody(
-    onAddBorrame: () -> Unit,
-    onEditBorrame: (Int) -> Unit,
+fun AmonestacionListBody(
+    onAddAmonestacion: () -> Unit,
+    onEditAmonestacion: (Int) -> Unit,
 ){
     Scaffold(
         snackbarHost = { SnackbarHostState() },
         floatingActionButton = {
             FloatingActionButton(
-                onClick = onAddBorrame,
+                onClick = onAddAmonestacion,
                 modifier = Modifier.testTag("fab_add")
             ) {
                 Icon(
                     imageVector = Icons.Default.Add,
-                    contentDescription = "Agregar Borrame"
+                    contentDescription = "Amonestar Empleado"
                 )
             }
         }
@@ -60,7 +60,7 @@ fun BorrameListBody(
                 .fillMaxSize()
         ) {
             Text(
-                text = "No hay borrame",
+                text = "No hay Empleados amonestados",
                 modifier = Modifier
                     .align(Alignment.Center)
                     .testTag("empty message"),
@@ -77,16 +77,10 @@ fun BorrameListBody(
     }
 }
 
-data class BorrameListUiState(
-    val numero: Int = 0,
-    val fecha: String = " ",
-    val balance: Double = 0.0
-)
-
 @Preview(showBackground = true)
 @Composable
-private fun BorrameListBodyPreview(){
+private fun AmonestacionListBodyPreview(){
     MaterialTheme {
-        BorrameListBody(onAddBorrame = {}, onEditBorrame = {})
+        AmonestacionListBody(onAddAmonestacion = {}, onEditAmonestacion = {})
     }
 }

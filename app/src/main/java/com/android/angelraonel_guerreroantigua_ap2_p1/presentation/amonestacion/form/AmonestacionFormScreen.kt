@@ -1,8 +1,11 @@
-package com.android.angelraonel_guerreroantigua_ap2_p1.presentation.borrame.form
+package com.android.angelraonel_guerreroantigua_ap2_p1.presentation.amonestacion.form
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -14,10 +17,11 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.android.angelraonel_guerreroantigua_ap2_p1.domain.amonestacion.model.Amonestacion
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun BorrameFormScreen(
+fun AmonestacionFormScreen(
     onBack: () -> Unit
 ){
     Scaffold(
@@ -37,15 +41,13 @@ fun BorrameFormScreen(
         Column(
             modifier = Modifier.fillMaxSize().padding(padding)
         ) {
-            Text("Formulario Borrame")
+            Text("Formulario Amonestacion")
         }
     }
 }
 
-
-
 @Preview(showBackground = true)
 @Composable
-private fun BorrameScreenBodyPreview(){
-    BorrameFormScreen {{}}
+private fun AmonestacionScreenBodyPreview(){
+    AmonestacionFormScreen {}
 }

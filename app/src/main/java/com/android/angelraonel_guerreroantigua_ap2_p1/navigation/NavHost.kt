@@ -8,9 +8,10 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.android.angelraonel_guerreroantigua_ap2_p1.presentation.borrame.form.BorrameFormScreen
-import com.android.angelraonel_guerreroantigua_ap2_p1.presentation.borrame.list.BorrameListScreen
-import com.android.angelraonel_guerreroantigua_ap2_p1.presentation.borrame.list.BorrameListViewModel
+import com.android.angelraonel_guerreroantigua_ap2_p1.presentation.amonestacion.form.AmonestacionFormScreen
+import com.android.angelraonel_guerreroantigua_ap2_p1.presentation.amonestacion.form.AmonestacionFormViewModel
+import com.android.angelraonel_guerreroantigua_ap2_p1.presentation.amonestacion.list.AmonestacionListScreen
+import com.android.angelraonel_guerreroantigua_ap2_p1.presentation.amonestacion.list.AmonestacionListViewModel
 
 @Composable
 fun RegistroNavHost(
@@ -19,21 +20,21 @@ fun RegistroNavHost(
 ){
     NavHost(
         navController = navController,
-        startDestination = Screen.BorrameList,
+        startDestination = Screen.AmonestacionList,
         modifier = Modifier.padding(innerPadding)
     ) {
-        composable<Screen.BorrameList>{
-            BorrameListScreen(
-                BorrameListViewModel(),
-                onAddBorrame = {
-                    navController.navigate(Screen.BorrameForm())
+        composable<Screen.AmonestacionList>{
+            AmonestacionListScreen(
+                AmonestacionListViewModel(),
+                onAddAmonestacion = {
+                    navController.navigate(Screen.AmonestacionForm())
                 },
-                onEditBorrame = {id-> navController.navigate(Screen.BorrameForm(borrameId = id)) }
+                onEditAmonestacion = {id-> navController.navigate(Screen.AmonestacionForm(amonestacionId = id)) }
             )
         }
 
-        composable<Screen.BorrameForm>{
-            BorrameFormScreen(
+        composable<Screen.AmonestacionForm>{
+            AmonestacionFormScreen(
                 onBack = {navController.navigateUp()}
             )
         }

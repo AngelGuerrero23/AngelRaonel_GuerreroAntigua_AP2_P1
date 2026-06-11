@@ -1,4 +1,0 @@
-package com.android.angelraonel_guerreroantigua_ap2_p1.presentation.borrame.list
-
-class BorrameListViewModel {
-}

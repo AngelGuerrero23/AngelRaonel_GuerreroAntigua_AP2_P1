@@ -1,9 +1,8 @@
 package com.android.angelraonel_guerreroantigua_ap2_p1.di
 
 import android.content.Context
-import androidx.room.Database
 import androidx.room.Room
-import com.android.angelraonel_guerreroantigua_ap2_p1.data.borrame.local.BorrameDao
+import com.android.angelraonel_guerreroantigua_ap2_p1.data.amonestacion.local.AmonestacionDao
 import com.android.angelraonel_guerreroantigua_ap2_p1.data.database.RegistroDb
 import dagger.Module
 import dagger.Provides
@@ -17,11 +16,11 @@ import javax.inject.Singleton
 object DataBaseModule {
     @Provides
     @Singleton
-    fun provideBorrameDb(@ApplicationContext context: Context): RegistroDb{
+    fun provideAmonestacionDb(@ApplicationContext context: Context): RegistroDb{
         return Room.databaseBuilder(
                 context,
                 RegistroDb::class.java,
-                "empleado_db",
+                "amonestacion_db",
 
         ).fallbackToDestructiveMigration().build()
     }
@@ -29,8 +28,8 @@ object DataBaseModule {
 
     @Provides
     @Singleton
-    fun provideBorrameDao(database: RegistroDb): BorrameDao{
-        return database.borrameDao()
+    fun provideAmonestacionDao(database: RegistroDb): AmonestacionDao{
+        return database.AmonestacionDao()
     }
 
 }
