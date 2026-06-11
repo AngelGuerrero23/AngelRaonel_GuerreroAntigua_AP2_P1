@@ -1,0 +1,35 @@
+Parcial #1: Amonestaciones App
+Requisitos de finalización
+Desarrollar una aplicación usando Jetpack Compose para gestionar el registro de amonestaciones a empleados. La aplicación debe permitir las operaciones básicas de un CRUD (Crear, Leer, Actualizar y Eliminar).
+
+1. Definición del Registro: Amonestación Para agilizar el desarrollo, el registro contará únicamente con los siguientes campos esenciales:
+
+IdAmonestacion:
+
+Nombres: (Ej: Juan Pérez, María Gómez)
+
+Razón: (Motivo de la penalización, ej: Llegada tardía, Ausencia injustificada)
+
+Monto: (Penalización económica, valor numérico)
+
+2. Pantalla de Consulta (Index) Hacer una consulta de las amonestaciones registradas que permita filtrar por Nombre del Empleado y/o Razón. Los filtros deben ser opcionales. Nota: Al final de la lista, se debe mostrar un conteo total de amonestaciones registradas y la suma total del monto de las penalizaciones de los registros filtrados.
+
+Funcionalidad Solicitada
+
+List Screen: Visualización de todas las amonestaciones con los totales solicitados.
+
+Crear: Pantalla con validaciones (todos los campos son obligatorios).
+
+Modificar: Permitir editar cualquier campo de una amonestación ya registrada.
+
+Eliminar: Opción para borrar un registro de la lista.
+
+Entregables
+
+Link del repositorio en GitHub (Asegurarse de que sea público).
+
+Foto del List Screen (Mostrando los filtros y totales).
+
+Foto del registro mostrando validación (Ej: Intento de guardar sin nombre o sin monto).
+
+Foto del registro editando (Formulario con datos cargados).
