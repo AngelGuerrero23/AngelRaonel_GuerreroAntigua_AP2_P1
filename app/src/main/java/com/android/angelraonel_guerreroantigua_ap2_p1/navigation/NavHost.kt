@@ -4,6 +4,8 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -25,7 +27,6 @@ fun RegistroNavHost(
     ) {
         composable<Screen.AmonestacionList>{
             AmonestacionListScreen(
-                AmonestacionListViewModel(),
                 onAddAmonestacion = {
                     navController.navigate(Screen.AmonestacionForm())
                 },
@@ -35,7 +36,11 @@ fun RegistroNavHost(
 
         composable<Screen.AmonestacionForm>{
             AmonestacionFormScreen(
-                onBack = {navController.navigateUp()}
+                viewModel = hiltViewModel(),
+                onBack =
+                    {
+                        navController.navigateUp()
+                    }
             )
         }
     }
