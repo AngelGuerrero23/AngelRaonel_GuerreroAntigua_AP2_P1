@@ -1,40 +1,41 @@
 package com.android.angelraonel_guerreroantigua_ap2_p1.domain.amonestacion.usecase
 
-data class ValidationResult (
+data class ValidationResult(
     val isValid: Boolean,
     val error: String? = null
 )
 
-fun validateRazon(razon: String): ValidationResult{
+fun validateAmonestacion(amonestacionId: Int?): ValidationResult{
     return when{
-        razon.isBlank() -> ValidationResult(false, "Beneficiario no puede estar vacio")
-        razon.trim().length < 2 -> ValidationResult(false,"Debe contener mas de" +
-                "3 Carácteres")
-        else-> ValidationResult(true)
+        (amonestacionId ?: 0) < 0 -> ValidationResult(false, "El Id no puede ser negativo")
+        else -> ValidationResult(true)
     }
 }
 
-fun validateNombre(nombres: String) : ValidationResult{
+fun validateNombres(nombres: String): ValidationResult{
     return when{
-        nombres.isBlank() -> ValidationResult(false, "Beneficiario no puede estar vacio")
-        nombres.trim().length < 2 -> ValidationResult(false,"Debe contener mas de" +
-                "3 Carácteres")
+        nombres.isBlank() -> ValidationResult(false, "El nombre no puede estar vacio")
+        nombres.trim().length < 3 -> ValidationResult(false,"Debe contener mas de 2 Carácteres")
 
-        !nombres.all { it.isLetter() || it.isWhitespace() } ->(
+        !nombres.all { it.isLetter() || it.isWhitespace()}->(
                 ValidationResult(false, "El nombre no puede tener numero ni" +
                         "caracteres especiales")
                 )
 
-        nombres.length >16 -> {
-            ValidationResult(false, "El nombre no puede contener mas de 16" +
-                    "caracteres")
+        nombres.length>16->{
+            ValidationResult(false, "El nombre no puede contener mas de 16 carácteres")
         }
-        else-> ValidationResult(true)
+        else -> ValidationResult(true)
     }
 }
 
-
-fun validateMonto(monto: String): ValidationResult{
+fun validateRazon(razon: String): ValidationResult{
+    return when{
+        razon.isBlank()-> ValidationResult(false, "La razon no puede estar vacia")
+        else-> ValidationResult(true)
+    }
+}
+fun validateMonto(monto: String): ValidationResult {
     return when{
         monto.isBlank() -> ValidationResult(false, "El monto no puede estar vacio")
         monto.toDoubleOrNull() == null -> ValidationResult(false, "Ingrese un sueldo" +

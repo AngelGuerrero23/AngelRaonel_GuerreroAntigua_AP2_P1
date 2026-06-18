@@ -4,6 +4,9 @@ import com.android.angelraonel_guerreroantigua_ap2_p1.domain.amonestacion.model.
 
 data class AmonestacionListUiState(
     val isLoading: Boolean = false,
-    val amonestaciones: List<Amonestacion> = emptyList(),
+    val amonestacion: List<Amonestacion> =emptyList(),
+    val message: String? =null,
+    val navigateToCreate: Boolean = false,
+    val navigateToEditId: Int? = null,
     val error: String? = null
 )
